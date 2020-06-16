@@ -95,9 +95,10 @@ class SettingsController extends Controller
         $user = Auth::user();
         $this->validate($request, [
             'password' => 'required|passcheck:' . $user->password,
-            'new_password' => 'required|confirmed|min:6',
+            'new_password' => 'required|confirmed|min:6|not_in:'.$request->password,
         ], [
-            'password.passcheck' => 'Password lama tidak sesuai'
+            'password.passcheck' => 'Password lama tidak sesuai',
+			'new_password.not_in' => 'Password digunakan saat ini',
         ]);
 
         $user->password = bcrypt($request->get('new_password'));
