@@ -81,11 +81,11 @@
                 </div>
             {!! Form::close() !!}
 
-            <a href=" ">Lupa password</a><br>
+            <!-- <a href=" ">Lupa password</a><br> -->
             <!-- <a href=" " class="text-center">Daftar baru</a> -->
 
             <!-- <a href="{{ route('password.request') }}">Lupa password</a><br> -->
-            <a href="{{ route('register') }}" class="text-center">Daftar baru</a>
+            </br>
 
         </div>
         <!-- /.login-box-body -->
